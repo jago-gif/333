@@ -50,6 +50,15 @@ public class Main {
 
             }while (opMenuAdmin !=OPCION_MENU_SALIR);
         }else{
+            int opmenuUser;
+            do {
+                opmenuUser= menuUser();
+                switch (opmenuUser){
+                    case OPCION_MENU_AGREGAR_VENTA:
+                        crearVenta();
+                }
+
+            }while (opmenuUser!=OPCION_MENU_SALIR);
 
         }
 
@@ -69,6 +78,12 @@ public class Main {
         System.out.println("[3] para Realizar una venta ");
         System.out.println("[4] para ver ventas realizadas ");
         System.out.println("[0] para salir del sistema ");
+        Scanner scan = new Scanner(System.in);
+        return scan.nextInt();
+    }
+    private  static int menuUser(){
+        System.out.println("[3] para Realizar una venta ");
+        System.out.println("[5] para salir del sistema ");
         Scanner scan = new Scanner(System.in);
         return scan.nextInt();
     }
